@@ -4,7 +4,7 @@ const { exec } = require('child_process');
 const resolvePercyTokens = () => {
   if (process.env.PUBLICATION_UNDER_TEST.includes('www')) {
     exec(
-        `printenv`,
+        `echo $PERCY_TOKEN`,
         { env: { ...process.env, PERCY_TOKEN: `734573428736548273648723` } },
         (error, stdout, stderr) => {
           if (error) {
