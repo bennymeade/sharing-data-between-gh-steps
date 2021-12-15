@@ -28,6 +28,7 @@ jobs:
         id: step_one_point_five
         run: |
           node -v
+          node create-env-var.js 
           echo "PERCY_TOKEN=$PERCY_TOKEN" >> $GITHUB_ENV
         env:
           PUBLICATION_UNDER_TEST: ${{ github.event.inputs.envUnderTest }}
