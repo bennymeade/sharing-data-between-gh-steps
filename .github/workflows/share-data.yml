@@ -27,8 +27,9 @@ jobs:
       - name: Add bespoke value
         id: step_one_point_five
         run: |
-          node create-env-var.js  
-          echo "PERCY_TOKEN=${{ $PERCY_TOKEN }}" >> $GITHUB_ENV
+          node create-env-var.js
+          printenv
+          echo "PERCY_TOKEN=${{ env.PERCY_TOKEN }}" >> $GITHUB_ENV
         env:
           PUBLICATION_UNDER_TEST: ${{ github.event.inputs.envUnderTest }}
 
