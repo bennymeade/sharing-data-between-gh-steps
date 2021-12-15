@@ -31,6 +31,7 @@ jobs:
           echo "PERCY_TOKEN=${{ env.PERCY_TOKEN }}" >> $GITHUB_ENV
         env:
           PUBLICATION_UNDER_TEST: ${{ github.event.inputs.envUnderTest }}
+          PERCY_TOKEN: $PERCY_TOKEN
 
       - name: Use the value
         id: step_two
