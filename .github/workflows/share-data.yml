@@ -29,6 +29,8 @@ jobs:
         run: |
           node create-env-var.js
           printenv
+          set
+          echo $PERCY_TOKEN
           echo "PERCY_TOKEN=${{ env.PERCY_TOKEN }}" >> $GITHUB_ENV
         env:
           PUBLICATION_UNDER_TEST: ${{ github.event.inputs.envUnderTest }}
