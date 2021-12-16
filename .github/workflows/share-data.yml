@@ -33,6 +33,7 @@ jobs:
           echo 000000000000000000000000000000000000000000000000000
           echo $PERCY_TOKEN
           echo "PERCY_TOKEN=${{ env.PERCY_TOKEN }}" >> $GITHUB_ENV
+          echo $GITHUB_ENV
         env:
           PUBLICATION_UNDER_TEST: ${{ github.event.inputs.envUnderTest }}
 
