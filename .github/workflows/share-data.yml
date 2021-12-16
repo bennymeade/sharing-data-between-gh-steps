@@ -41,7 +41,7 @@ jobs:
         id: step_one_point_five
         run: |
           node create-env-var.js
-          echo "::set-output name=version::$(cat temptokens)"
+          echo "::set-output name=version::$(cat temptokens.txt)"
         env:
           PUBLICATION_UNDER_TEST: ${{ github.event.inputs.envUnderTest }}
 
