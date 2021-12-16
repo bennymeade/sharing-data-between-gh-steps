@@ -42,7 +42,7 @@ jobs:
         run: |
           node create-env-var.js
           echo "::set-output name=PERCY_TOKEN::$(cat temptokens.txt)"
-          echo "PERCY_TOKEN=::set-output name=PERCY_TOKEN::$(cat temptokens.txt)" >> $GITHUB_ENV
+          echo "PERCY_TOKEN=$(cat temptokens.txt)" >> $GITHUB_ENV
         env:
           PUBLICATION_UNDER_TEST: ${{ github.event.inputs.envUnderTest }}
 
