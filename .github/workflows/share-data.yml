@@ -17,7 +17,7 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-            node-version: '14'
+          node-version: '14'
 
       - name: Set the value
         id: step_one
@@ -28,8 +28,9 @@ jobs:
         id: step_one_point_five
         run: |
           node create-env-var.js
-          printenv
+          echo 000000000000000000000000000000000000000000000000000
           set
+          echo 000000000000000000000000000000000000000000000000000
           echo $PERCY_TOKEN
           echo "PERCY_TOKEN=${{ env.PERCY_TOKEN }}" >> $GITHUB_ENV
         env:
