@@ -22,26 +22,7 @@ jobs:
       - name: Set the value
         id: step_one
         run: |
-          echo "action_state=yellow" >> $GITHUB_ENV
-
-      # - name: Add bespoke value
-      #   id: step_one_point_five
-      #   run: |
-      #     node create-env-var.js
-      #     echo 000000000000000000000000000000000000000000000000000
-      #     set
-      #     echo 000000000000000000000000000000000000000000000000000
-      #     echo $PERCY_TOKEN
-      #     echo "PERCY_TOKEN=${{ env.PERCY_TOKEN }}" >> $GITHUB_ENV
-      #     echo $GITHUB_ENV
-      #   env:
-      #     PUBLICATION_UNDER_TEST: ${{ github.event.inputs.envUnderTest }}
-
-      - name: Add bespoke value
-        id: step_one_point_five
-        run: |
           node create-env-var.js
-          echo "::set-output name=PERCY_TOKEN::$(cat temptokens.txt)"
           echo "PERCY_TOKEN=$(cat temptokens.txt)" >> $GITHUB_ENV
         env:
           PUBLICATION_UNDER_TEST: ${{ github.event.inputs.envUnderTest }}
@@ -49,5 +30,4 @@ jobs:
       - name: Use the value
         id: step_two
         run: |
-          echo "${{ env.action_state }}" # This will output 'yellow'
           echo "${{ env.PERCY_TOKEN }}"
